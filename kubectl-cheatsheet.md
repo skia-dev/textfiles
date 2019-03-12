@@ -39,6 +39,10 @@ Delete pods and you really mean it
 
     kubectl get pods | grep [search] | awk '{print $1}' | xargs -L 1 kubectl delete pod --force --grace-period=0
 
+Connect a local port (e.g. 8083) to a port on the pod (e.g. 8000). [more on port-forward](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#port-forward)
+
+    kubectl port-forward [pod] 8083:8000
+
 Setup
 =====
 
