@@ -89,6 +89,19 @@ In addition the kubernetes config files are kept in git repos:
 
   * [skia-public](https://skia.googlesource.com/skia-public-config/)
   * [skia-corp](https://skia.googlesource.com/skia-corp-config/)
+
+Troubleshooting
+---------------
+
+If your pod is crashing shortly after startup and you can't "SSH" into it as above, try replacing
+the args in the config with
+
+    image: # Keep this the same, or use 'debian'
+    command: ["/bin/sh"]
+    args: ["-c", "sleep 300"]
+    
+This will run your image, but not run the crashing executable, giving you a chance to poke in
+and investigate.
   
 Naming
 ======
