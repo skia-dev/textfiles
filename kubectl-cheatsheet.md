@@ -111,8 +111,4 @@ Applications, if they contain a separator, should use "-" instead of "\_", since
 skia-corp prometheus graphs
 ===========================
 
-    gcloud container clusters get-credentials skia-corp --zone us-central1-a --project google.com:skia-corp \
-    && gcloud config set project google.com:skia-corp \
-    && kubectl port-forward prometheus-0 9090:9090
-
-Then go to http://localhost:9090/ or click on the link_to_source of an alert for skia-corp.
+Are available at https://skia-prom.corp.goog/graph.
