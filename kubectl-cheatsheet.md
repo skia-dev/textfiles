@@ -43,6 +43,16 @@ Connect a local port (e.g. 8083) to a port on the pod (e.g. 8000). [more on port
 
     kubectl port-forward [pod] 8083:8000
 
+Reboot a pod (first by scaling it to 0 replicas, then back to 1 [or n]).
+
+    # scale it down, see also rs/foo for ReplicaSet and statefulset/foo for StatefulSet
+    kubectl scale --replicas=0 deployment/foo
+    
+    # pause, maybe check on it with kubectl get pods | grep foo
+    
+    # bring it back.
+    kubectl scale --replicas=1 deployment/foo
+
 Setup
 =====
 
