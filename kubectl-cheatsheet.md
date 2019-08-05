@@ -22,6 +22,10 @@ Get pods grouped by the nodes (i.e. VM) they run on
 Get and follow the logs for a pod
 
     kubectl logs -f [pod]
+    
+Get the logs for the previous incarnation of a pod (i.e. why did it restart?):
+
+    kubectl logs --previous [pod]
 
 Get a lot of info for a pod
 
