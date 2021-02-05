@@ -23,8 +23,12 @@ Get and follow the logs for a pod
 
     kubectl logs -f [pod]
     
-Get the logs for the previous incarnation of a pod (i.e. why did it restart?):
+Investigate why a pod has been rebooted (OOM or segfault are typical reasons):
 
+    # Look for the reason of the last termination
+    kubectl get pod [pod name] --output=yaml | grep -A 6 lastState
+    
+    # Look at the logs in the last iteration of the pod
     kubectl logs --previous [pod]
 
 Get a lot of info for a pod
@@ -56,6 +60,7 @@ Reboot a pod (first by scaling it to 0 replicas, then back to 1 [or n]).
     
     # bring it back.
     kubectl scale --replicas=1 deployment/foo
+
 
 Setup
 =====
