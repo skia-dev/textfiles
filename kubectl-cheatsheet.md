@@ -61,6 +61,9 @@ Reboot a pod (first by scaling it to 0 replicas, then back to 1 [or n]).
     # bring it back.
     kubectl scale --replicas=1 deployment/foo
 
+Copy a file from a container to your local machine.
+
+    kubectl cp [pod]:/path/to/container/file /path/to/local/machine/file
 
 Setup
 =====
